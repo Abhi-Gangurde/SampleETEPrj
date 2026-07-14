@@ -1,0 +1,15 @@
+{
+	"name": "adf-dkg-practice",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9f95ef63-70a3-4b1b-b9bf-9af748dc2ed6",
+		"tenantId": "ab0c03e9-2969-4d63-b8e1-5b79037b10a9"
+	}
+}
