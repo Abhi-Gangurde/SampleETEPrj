@@ -5,6 +5,8 @@
 			{
 				"name": "Copy_Source_Sales_To_Target",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -61,6 +63,8 @@
 			{
 				"name": "Bronze",
 				"type": "DatabricksSparkPython",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy_Source_Sales_To_Target",
