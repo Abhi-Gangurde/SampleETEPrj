@@ -1,0 +1,72 @@
+{
+	"name": "DS_Source_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Sales.txt",
+				"fileSystem": "practicecont"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Item_Identifier",
+				"type": "String"
+			},
+			{
+				"name": "Item_Weight",
+				"type": "String"
+			},
+			{
+				"name": "Item_Fat_Content",
+				"type": "String"
+			},
+			{
+				"name": "Item_Visibility",
+				"type": "String"
+			},
+			{
+				"name": "Item_Type",
+				"type": "String"
+			},
+			{
+				"name": "Item_MRP",
+				"type": "String"
+			},
+			{
+				"name": "Outlet_Identifier",
+				"type": "String"
+			},
+			{
+				"name": "Outlet_Establishment_Year",
+				"type": "String"
+			},
+			{
+				"name": "Outlet_Size",
+				"type": "String"
+			},
+			{
+				"name": "Outlet_Location_Type",
+				"type": "String"
+			},
+			{
+				"name": "Outlet_Type",
+				"type": "String"
+			},
+			{
+				"name": "Item_Outlet_Sales",
+				"type": "String"
+			}
+		]
+	}
+}

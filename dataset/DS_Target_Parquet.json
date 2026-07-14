@@ -1,0 +1,19 @@
+{
+	"name": "DS_Target_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Target",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "raw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
