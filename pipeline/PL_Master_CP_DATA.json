@@ -57,6 +57,87 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Bronze",
+				"type": "DatabricksSparkPython",
+				"dependsOn": [
+					{
+						"activity": "Copy_Source_Sales_To_Target",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pythonFile": "/Users/dhiraj.nskd@gmail.com/SampleETEPrj/Databricks/src/bronze.py"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADB",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Silver",
+				"type": "DatabricksSparkPython",
+				"dependsOn": [
+					{
+						"activity": "Bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pythonFile": "/Users/dhiraj.nskd@gmail.com/SampleETEPrj/Databricks/src/silver.py"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADB",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Gold",
+				"type": "DatabricksSparkPython",
+				"dependsOn": [
+					{
+						"activity": "Silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pythonFile": "/Users/dhiraj.nskd@gmail.com/SampleETEPrj/Databricks/src/gold.py"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADB",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
